@@ -6,6 +6,7 @@ int delay_time = 0;
 void setup(){
     Serial.begin(115200);
     pinMode(BLUE, OUTPUT);
+    Connect_Wifi();
 
     xTaskCreatePinnedToCore(loop, "loop", 1000, NULL, 1, NULL, 0);
     xTaskCreatePinnedToCore(GET_delay, "GET_delay", 1000, NULL, 1, NULL, 1);
